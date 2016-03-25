@@ -1,0 +1,8 @@
+[template]
+src = "phpmyadmin.config.inc.php.tmpl"
+dest = "/etc/phpmyadmin/config.inc.php"
+mode = "0644"
+
+keys = [
+    "/mysql/host"
+]
