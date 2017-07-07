@@ -5,10 +5,6 @@ if [ "$1" = 'apache2' ]; then
     export APACHE_SERVER_NAME="${APACHE_SERVER_NAME:-$(hostname)}"
     export PHP_TIMEZONE="${PHP_TIMEZONE:-UTC}"
 
-	if [ -n "$APACHE_COREDUMP" ]; then
-		a2enconf coredump
-	fi
-
     echo "Updating apache/php configuration files."
     /usr/local/bin/confd -onetime -backend env
 
