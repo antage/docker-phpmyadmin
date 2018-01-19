@@ -10,6 +10,7 @@ RUN \
         ca-certificates \
         apache2 \
         php \
+        gosu \
         phpmyadmin \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
@@ -21,8 +22,6 @@ RUN \
     && mkdir -p /etc/confd/conf.d \
     && mkdir -p /etc/confd/templates \
     && touch /etc/confd/confd.toml \
-    && curl -o /usr/local/bin/gosu -SL "https://github.com/tianon/gosu/releases/download/1.10/gosu-amd64" \
-    && chmod +x /usr/local/bin/gosu \
     && rm /etc/php/7.0/apache2/conf.d/* \
     && rm /etc/php/7.0/cli/conf.d/* \
     && phpenmod -s ALL opcache mcrypt json mysqlnd mysqli mbstring \
